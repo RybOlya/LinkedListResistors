@@ -3,7 +3,7 @@ from models.sort_order import SortOrder
 from models.node import Node
 
 
-class ResistorLinkedList:
+class LinkedList:
 
     def __init__(self):
         self.head = None
@@ -23,7 +23,7 @@ class ResistorLinkedList:
             new_node.previous = current_node
             new_node.next = None
 
-    def sort_by_value(self, order : SortOrder):
+    def sort_by_value(self, order: SortOrder):
         if self.head is None:
             return
         else:
@@ -49,7 +49,8 @@ class ResistorLinkedList:
                             next_node.data = temporary_variable
                         next_node = next_node.next
                     current_node = current_node.next
-    def sort_by_name(self, order : SortOrder):
+
+    def sort_by_name(self, order: SortOrder):
         if self.head is None:
             return
         else:
@@ -109,6 +110,7 @@ class ResistorLinkedList:
         while current_node is not None:
             print(current_node.data)
             current_node = current_node.next
+            
     def delete_by_value(self, value: float):
         current_node = self.head
 
